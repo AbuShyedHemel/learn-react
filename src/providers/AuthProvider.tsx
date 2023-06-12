@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface AuthContext {
   isAuthenticated: boolean;
@@ -7,6 +6,7 @@ interface AuthContext {
   removeAuthentication: () => void;
   updateToken: (token: string) => void;
   removeToken: () => void;
+  name: string;
 }
 
 const AuthContext = React.createContext<AuthContext>({
@@ -15,6 +15,7 @@ const AuthContext = React.createContext<AuthContext>({
   removeAuthentication: () => undefined,
   updateToken: () => undefined,
   removeToken: () => undefined,
+  name: "",
 });
 
 export const useAuth = () => React.useContext(AuthContext);
